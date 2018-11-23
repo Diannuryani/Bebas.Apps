@@ -13,13 +13,17 @@ branches :
     - develop #-> DevServer
 
 # instal Environmen di OS
-before_install :
-  - curl -LO https:///storage.googleapis.com/kubernetes-release/release/$(curl -s https://Storage.googleapis.com/kubernets-release/release/stable.txt)/bin/linux/amd64/kubectl
-  - chmod +x ./kubectl #permissions
-  - sudo mv ./kubectl/usr/local/bin/kubectl #move to persisten
 
 # precompile
 before_script :
+- cp .env.travis .env
+  - composer install -no-interaction
+  - php artisan key:generate
 
 # main execution proses build
 script :
+  - ./vendor/bin/phpunit
+
+#display
+after_success :
+
