@@ -13,9 +13,6 @@ branches:
     - develop #-> DevServer
 
 # instal Environmen di OS
-before_install :
-  - chmod +x ./kubectl #permissions
-  - sudo mv ./kubectl /usr/local/bin/kubectl #move to persisten
 
 # precompile
 before_script :
