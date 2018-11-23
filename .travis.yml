@@ -15,7 +15,13 @@ branches:
 # instal Environmen di OS
 
 # precompile
-before_script :
+  - cp .env.travis .env
+  - composer install -no-interaction
+  - php artisan key:generate
 
 # main execution proses build
 script :
+  - ./vendor/bin/phpunit
+
+#display
+after_success :
