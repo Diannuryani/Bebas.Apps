@@ -16,7 +16,7 @@ branches :
 
 # precompile
 before_script :
-  - cp .env.travis .env
+  - cp .env.travis .env.example
   - composer install -no-interaction
   - php artisan key:generate
 
