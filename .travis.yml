@@ -7,14 +7,13 @@ php:
   - 7.1
 
 #branch yang di gunakan
-branches : 
+branches: 
   only: 
     - master #->  QA/Straging server
     - develop #-> DevServer
 
 # instal Environmen di OS
 before_install :
-  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/amd64/kubectl
   - chmod +x ./kubectl #permissions
   - sudo mv ./kubectl /usr/local/bin/kubectl #move to persisten
 
